@@ -6,7 +6,7 @@ import { galleryItems } from "./gallery-items.js";
 createGalleryMarup(galleryItems);
 
 const markUpGallery = createGalleryMarup(galleryItems);
-let gallery = document.querySelector(".gallery");
+const gallery = document.querySelector(".gallery");
 
 gallery.insertAdjacentHTML("beforeend", markUpGallery);
 
@@ -29,7 +29,7 @@ function createGalleryMarup(galleryItems) {
 gallery.addEventListener("click", onGalleryImageClick);
 
 let item = new SimpleLightbox(".gallery a", {
-  captionsData: "title",
+  captionsData: "alt", captionDelay:'250'
 });
 
 function onGalleryImageClick(evt) {
@@ -40,6 +40,7 @@ function onGalleryImageClick(evt) {
   item.on("show.simplelightbox");
 }
 
-console.log(item);
 
-// console.log(captionsData);
+
+
+
