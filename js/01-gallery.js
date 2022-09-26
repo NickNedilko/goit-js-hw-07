@@ -3,11 +3,9 @@ import { galleryItems } from "./gallery-items.js";
 
 console.log(galleryItems);
 createGalleryMarup(galleryItems);
-
 const markUpGallery = createGalleryMarup(galleryItems);
 const gallery = document.querySelector(".gallery");
-// const body = document.querySelector("body");
-// console.log(body);
+
 gallery.insertAdjacentHTML("beforeend", markUpGallery);
 
 function createGalleryMarup(galleryItems) {

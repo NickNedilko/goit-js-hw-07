@@ -3,11 +3,9 @@ import { galleryItems } from "./gallery-items.js";
 
 // console.log(galleryItems);
 
-createGalleryMarup(galleryItems);
 
 const markUpGallery = createGalleryMarup(galleryItems);
 const gallery = document.querySelector(".gallery");
-
 gallery.insertAdjacentHTML("beforeend", markUpGallery);
 
 function createGalleryMarup(galleryItems) {
@@ -28,10 +26,6 @@ function createGalleryMarup(galleryItems) {
 
 gallery.addEventListener("click", onGalleryImageClick);
 
-let item = new SimpleLightbox(".gallery a", {
-  captionsData: "alt", captionDelay:'250'
-});
-
 function onGalleryImageClick(evt) {
   evt.preventDefault();
   if (evt.target.nodeName !== "IMG") {
@@ -39,6 +33,11 @@ function onGalleryImageClick(evt) {
   }
   item.on("show.simplelightbox");
 }
+
+let item = new SimpleLightbox(".gallery a", {
+  captionsData: "alt", captionDelay:'250'
+});
+
 
 
 
